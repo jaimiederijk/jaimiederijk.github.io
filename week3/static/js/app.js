@@ -5,22 +5,32 @@ var data = {
 		movieBaseUrl:"http://api.themoviedb.org/3/",
 		movieApiKey:"3974f78e9e581f953c413271e51a527a",
 	},
-
+	movieSearchTerms : [
+		"western","ocean","war","rome","crime","murder","space","china","school"
+	],
 	requestDataIss:function (url, target) {	//target = under what name should the the data be saved
 		var self = this;
 		var target = target;
 		var googleMap = require('./googleMap');
+		var sections = require('./sections');
 		promise.get(url).then(function(error, text, xhr) {
 		    if (error) {
 		    	sections.refreshIssMarker.stopInterval();
-		        alert('Error ' + xhr.status);
+		        console.log('Error ' + xhr.status);
 		        return;
 		    }
 		    self[target] = JSON.parse(text);
 		    //googleMap.setMapCordinates();
+
 		    googleMap.setupMarker(target);
 		});
 		//debugger
+	},
+	recommendMovie : function (lat) {
+		var devideBy = 180/data.movieSearchTerms.length;
+		var number = Math.abs(Math.floor(lat/devideBy));
+		var input = data.movieSearchTerms[number];
+		data.searchMovie(input,"searchedMovies");
 	},
 	searchMovie :function(input, target) {	//target = under what name should the the data be saved
 		var url = this.config.movieBaseUrl + 'search/multi?query=' + input +'&api_key=' + this.config.movieApiKey;
@@ -28,7 +38,8 @@ var data = {
 		var sections = require('./sections');
 		promise.get(url).then(function(error, text, xhr) {
 			if (error) {
-		        alert('Error ' + xhr.status);
+
+		        sections.renderMovieSearchedError();
 		        return;
 		    };
 		    self[target] = JSON.parse(text);
@@ -62,6 +73,11 @@ var googleMap = {
 		    var mapOptions = {
 		        zoom: 1,
 		        center: myLatlng,
+		        scrollwheel: false,
+			    navigationControl: false,
+			    mapTypeControl: false,
+			    scaleControl: false,
+			    draggable: false,
 		        mapTypeId: google.maps.MapTypeId.ROADMAP
 		    };
 
@@ -91,6 +107,7 @@ module.exports = googleMap;
 },{"./data":1}],3:[function(require,module,exports){
 var htmlElements = {
 	body: document.querySelector('body'),
+	header: document.querySelector('header'),
 	navLi: document.querySelectorAll('nav li'),
 	sections: document.querySelectorAll('section'),
 	movies: document.querySelector('#searchmovies'),
@@ -99,6 +116,7 @@ var htmlElements = {
 	iss: document.querySelector('#isstracker'),
 	movieSearch: document.querySelector('#searchmovies form'),
 	moviesTemplate: document.querySelector("#template-movies"),
+	movieTemplate: document.querySelector("#template-movie"),
 	moviesTemplateLoader: document.querySelector("#template-movies div")
 };
 
@@ -135,11 +153,16 @@ var data = require('./data');
 var routes = {
 	init: function() {
 		routie('', function() {
-			sections.displaySection("home");
+			routie('movies');
+			//sections.displaySection("home");
 		});
 		routie('movies', function() {
 			sections.displaySection("movies");
-			//
+			if (data.issData) {
+				data.recommendMovie(data.issData.longitude);
+			} else {
+				setTimeout(function(){ data.recommendMovie(data.issData.longitude); }, 2500);
+			}
 		});
 		routie('iss', function() {
 			sections.displaySection("iss");
@@ -171,14 +194,9 @@ var sections = {
 				return item.vote_average > 5.5;
 			});
 		}
-		//htmlElements.moviesTemplate.classList.add("load-movies");
-		setTimeout(function(){
-			htmlElements.moviesTemplateLoader.classList.add("loader");
-
-		}, 200);
 
 		htmlElements.moviesTemplateLoader.classList.add("loader");	
-
+		
 		data.searchMovie(input,"searchedMovies");
 	},
 	renderMovieSearched : function () {
@@ -195,9 +213,18 @@ var sections = {
 		htmlElements.moviesTemplateLoader.classList.remove("loader");
 		Transparency.render(temp,movies.results,directives);
 	},
+	renderMovieSearchedError : function () {
+		var temp = htmlElements.moviesTemplate;
+		var errorData = {
+			title:"something went wrong",
+			overview:"please try again"
+		}
+		htmlElements.moviesTemplateLoader.classList.remove("loader");
+		Transparency.render(temp,errorData);
+	},
 	renderMoviePage : function (id) {
 		var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
-		var temp = document.querySelector("#template-movie");
+		var temp = htmlElements.movieTemplate;
 		Transparency.render(temp,movie);
 	},
 	// firstHideAllSections : function() {
@@ -215,6 +242,7 @@ var sections = {
 		};
 	},
 	displaySection : function (sectionName) {
+		htmlElements.moviesTemplateLoader.classList.add("loader");
 		this.hideAllSections();
 		var section = htmlElements[sectionName];
 		section.classList.remove("hidden");
@@ -245,12 +273,12 @@ var ui = {
 		});
 	},
 	setupGestures : function () {
-		var hammertime = new Hammer(htmlElements.body);
+		var hammertime = new Hammer(htmlElements.header);
 		hammertime.on('swiperight', function(ev) {
-		    ui.switchSection("right");			    
+		    ui.switchSection("left");			    
 		});
 		hammertime.on('swipeleft', function(ev) {
-		    ui.switchSection("left");			    
+		    ui.switchSection("right");    
 		});
 	},
 	switchSection : function (direction) {

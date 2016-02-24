@@ -9,12 +9,12 @@ var ui = {
 		});
 	},
 	setupGestures : function () {
-		var hammertime = new Hammer(htmlElements.body);
+		var hammertime = new Hammer(htmlElements.header);
 		hammertime.on('swiperight', function(ev) {
-		    ui.switchSection("right");			    
+		    ui.switchSection("left");			    
 		});
 		hammertime.on('swipeleft', function(ev) {
-		    ui.switchSection("left");			    
+		    ui.switchSection("right");    
 		});
 	},
 	switchSection : function (direction) {

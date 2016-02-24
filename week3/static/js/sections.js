@@ -11,6 +11,7 @@ var sections = {
 				return item.vote_average > 5.5;
 			});
 		}
+
 		htmlElements.moviesTemplateLoader.classList.add("loader");	
 		
 		data.searchMovie(input,"searchedMovies");
@@ -29,9 +30,18 @@ var sections = {
 		htmlElements.moviesTemplateLoader.classList.remove("loader");
 		Transparency.render(temp,movies.results,directives);
 	},
+	renderMovieSearchedError : function () {
+		var temp = htmlElements.moviesTemplate;
+		var errorData = {
+			title:"something went wrong",
+			overview:"please try again"
+		}
+		htmlElements.moviesTemplateLoader.classList.remove("loader");
+		Transparency.render(temp,errorData);
+	},
 	renderMoviePage : function (id) {
 		var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
-		var temp = document.querySelector("#template-movie");
+		var temp = htmlElements.movieTemplate;
 		Transparency.render(temp,movie);
 	},
 	// firstHideAllSections : function() {
@@ -49,6 +59,7 @@ var sections = {
 		};
 	},
 	displaySection : function (sectionName) {
+		htmlElements.moviesTemplateLoader.classList.add("loader");
 		this.hideAllSections();
 		var section = htmlElements[sectionName];
 		section.classList.remove("hidden");

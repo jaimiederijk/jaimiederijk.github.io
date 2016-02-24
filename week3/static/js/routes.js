@@ -4,11 +4,16 @@ var data = require('./data');
 var routes = {
 	init: function() {
 		routie('', function() {
-			sections.displaySection("home");
+			routie('movies');
+			//sections.displaySection("home");
 		});
 		routie('movies', function() {
 			sections.displaySection("movies");
-			//
+			if (data.issData) {
+				data.recommendMovie(data.issData.longitude);
+			} else {
+				setTimeout(function(){ data.recommendMovie(data.issData.longitude); }, 2500);
+			}
 		});
 		routie('iss', function() {
 			sections.displaySection("iss");
