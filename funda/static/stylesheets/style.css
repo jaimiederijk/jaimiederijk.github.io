@@ -1,0 +1,157 @@
+body {
+  margin: 0;
+
+  overflow-x: hidden;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+.images {
+  display: flex;
+  flex-wrap:  wrap;
+  justify-content: space-around;
+}
+figure {
+  width: 40vw;
+  margin:0;
+}
+figure:target {
+  width: 100vw;
+}
+
+header {
+  height: 3em;
+  position: fixed;
+  z-index: 5;
+  background-color: #F8B000;
+  width: 100vw;
+}
+header button{
+    position: fixed;
+    right: 0;
+    width: 6em;
+    height: 3rem;
+    top: 0;
+    padding: 0;
+    border: none;
+    background-color: rgb(49,138,48);
+    background-image: url('../images/thumb-up.png');
+    background-repeat: no-repeat;
+    background-size: 3em;
+    background-position: center;
+}
+header button:first-of-type {
+  background-color: rgb(163,46,46);
+  background-image: url('../images/thumb-down.png');
+  left: 0;
+} 
+
+
+article > img {
+  max-width: 40em;
+}
+article h2 {
+  color: #3888C5;
+}
+article article {
+  padding: 0 2em;
+}
+
+
+
+nav a {
+  font-size: 1.5em;
+}
+nav li {
+	list-style: none;
+  margin: 2em;
+}
+
+
+section {
+  padding-top: 3em;
+	/*max-width: 35em;*/
+	transition:1s;
+	/*position: absolute;*/
+  /*use gpu*/
+	-webkit-transform: translate3d(0, 0, 0);
+   -moz-transform: translate3d(0, 0, 0);
+   -ms-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+   /*transform: translateX(200em);*/
+}
+
+
+
+#map-canvas{
+  height: 660px;
+  width: 90vw;
+  max-width: 40em;
+}
+
+/*http://projects.lukehaas.me/css-loaders/*/
+.loader,
+.loader:before,
+.loader:after {
+  background: #ffffff;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader {
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #ffffff;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #ffffff;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #ffffff;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #ffffff;
+    height: 5em;
+  }
+}
+
+
+@media (max-width: 35.625em) { /* 570px */
+
+}
