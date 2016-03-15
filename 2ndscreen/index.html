@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>web dev</title>
+    <meta charset="utf-8" />
+    <meta name="description" content="web dev" />
+    <meta name="author" content="Jaimie de Rijk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="static/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,600' rel='stylesheet' type='text/css'>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+            </ul>
+        </nav>
+    </header>
+    <section id="program">
+    	<h1>Programma</h1>
+        <div id="template-program">
+            <a data-bind="deeplink">
+                <h2 data-bind="vs"></h2>
+                <p data-bind="datum"></p>
+            </a>
+        </div>
+    </section>
+    <section id="matchinfo">
+    	<div id="template-matchinfo">
+            <p data-bind="team2"></p>
+        </div>
+    </section>
+    <section id="match">
+        <div id="template-match">
+            <h1></h1>
+        </div>
+    </section>
+    <section id="eventinfo">
+        <div id="template-eventinfo">
+            <h1></h1>
+        </div>
+    </section>
+    <script type="text/javascript" src="static/js/lib/transparency.min.js"></script>
+    <script type="text/javascript" src="static/js/lib/promise.js"></script>
+    <script type="text/javascript" src="static/js/lib/underscore-min.js"></script>
+    <script type="text/javascript" src="static/js/lib/hammer.min.js"></script>
+    <script type="text/javascript" src="static/js/lib/routie.min.js"></script>
+    <script type="text/javascript" src="static/js/app.js"></script>
+</body>
+</html>

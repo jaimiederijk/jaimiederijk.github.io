@@ -1,0 +1,16 @@
+{
+	"matches" : [
+		{
+			"id" : 0,
+			"team1" : "Nederland",
+			"team2" : "Verenigde Staten",
+			"datum" : ""
+		},
+		{
+			"id" : 1,
+			"team1" : "Nederland",
+			"team2" : "Polen",
+			"datum" : ""
+		}
+	]
+}
