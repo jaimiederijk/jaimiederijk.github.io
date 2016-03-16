@@ -48,6 +48,7 @@
 				if (data.matches) {
 					sections.renderMatch(competitionname,id);
 					sections.displaySection("match");
+					htmlElements.eventMessage.innerHTML= "<a href='#event/start'>start van de wedstrijd</a>";
 					sections.changeBallKeeper(true);
 				} else {
 					routie('programma');
@@ -121,7 +122,15 @@
 		renderEvent: function (name) {
 			var temp = htmlElements.eventinfoTemplate;
 			var eventinfo = _.find(data.matches.events,function(item){ return item.name == name;})
-			Transparency.render(temp,eventinfo);
+
+			var directives = {
+				eventimage : {
+					src: function () {
+						return this.image;
+					}
+				}
+			}
+			Transparency.render(temp,eventinfo,directives);
 		},
 		renderProgram : function () {
 			var temp = htmlElements.programTemplate;

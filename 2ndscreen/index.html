@@ -7,7 +7,7 @@
     <meta name="author" content="Jaimie de Rijk" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="static/stylesheets/style.css" media="screen" rel="stylesheet" type="text/css" />
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,600' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,600' rel='stylesheet' type='text/css'> -->
 </head>
 <body>
     <header>
@@ -40,9 +40,9 @@
     </section>
     <section id="match">
         <div id="template-match">
-            <span data-bind="team1"></span>-<span data-bind="team2"></span>
-            <div id="event"><a  data-bind="event"></a></div>
-            <div data-bind="team1Athletes">          
+            <h2><span data-bind="team1"></span> - <span data-bind="team2"></span></h2>
+            <div id="event"><a  data-bind="event"> </a></div>
+            <div data-bind="team1Athletes">
                 <p><span data-bind="number"></span> <span data-bind="name"></span></p>
             </div>
             <div data-bind="team2Athletes">  
@@ -54,6 +54,7 @@
         <div id="template-eventinfo">
             <h2 data-bind="name"></h2>
             <p data-bind="explanation"></p>
+            <img data-bind="eventimage" alt="">
         </div>
     </section>
     <script type="text/javascript" src="static/js/lib/transparency.min.js"></script>

@@ -188,11 +188,13 @@
 	"events" : [
 		{
 			"name": "u20",
-			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20."
+			"explanation" : "Zware overtredingen zoals iemand onderduwen tijdens het zwemmen worden bestraft met een strafworp",
+			"image":"static/images/Water_Polo_Basics.jpg"
 		},
 		{
 			"name" : "strafworp",
-			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20."
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20.",
+			"image":"static/images/Water_Polo_Basics.jpg"
 		}
 	]	
 }
