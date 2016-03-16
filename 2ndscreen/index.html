@@ -19,25 +19,41 @@
     <section id="program">
     	<h1>Programma</h1>
         <div id="template-program">
-            <a data-bind="deeplink">
-                <h2 data-bind="vs"></h2>
-                <p data-bind="datum"></p>
-            </a>
+            <div data-bind = "competitions" >
+                <h2 data-bind = "compname"></h2>
+                <div data-bind= "matches">
+                    <a data-bind="deeplink">
+                        <h2 data-bind="vs"></h2>
+                        <p data-bind="date"></p>
+                        <p data-bind="time"></p>
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
     <section id="matchinfo">
     	<div id="template-matchinfo">
-            <p data-bind="team2"></p>
+            <h2>wedstrijd: <span data-bind="team1"></span>-<span data-bind="team2"></span></h2>
+            <a data-bind = "matchvideo">video</a>
+            <a data-bind = "matchlink"></a>
         </div>
     </section>
     <section id="match">
         <div id="template-match">
-            <h1></h1>
+            <span data-bind="team1"></span>-<span data-bind="team2"></span>
+            <div id="event"><a  data-bind="event"></a></div>
+            <div data-bind="team1Athletes">          
+                <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+            </div>
+            <div data-bind="team2Athletes">  
+                <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+            </div>
         </div>
     </section>
     <section id="eventinfo">
         <div id="template-eventinfo">
-            <h1></h1>
+            <h2 data-bind="name"></h2>
+            <p data-bind="explanation"></p>
         </div>
     </section>
     <script type="text/javascript" src="static/js/lib/transparency.min.js"></script>

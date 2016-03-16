@@ -1,7 +1,11 @@
 body {
   margin: 0;
+  font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
 }
 
+.hasball {
+  border: red solid 5px;
+}
 /*http://projects.lukehaas.me/css-loaders/*/
 .loader,
 .loader:before,

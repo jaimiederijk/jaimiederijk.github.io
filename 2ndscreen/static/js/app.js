@@ -6,6 +6,7 @@
 		navLi: document.querySelectorAll('nav li'),
 		sections : document.querySelectorAll('section'),
 		eventinfo : document.querySelector("#eventinfo"),
+		eventMessage : document.querySelector("#event"),
 		matchinfo : document.querySelector("#matchinfo"),
 		program : document.querySelector("#program"),
 		match : document.querySelector("#match"),
@@ -30,65 +31,184 @@
 				routie('programma');
 			});
 			routie('programma', function() {
-				
+				sections.changeBallKeeper(false);
 				sections.displaySection("program");
 			});
-			routie('wedstrijdinfo/:id', function(id) {
-				sections.renderMatchinfo(id);
-				sections.displaySection("matchinfo");
-			});
-			routie('wedstrijd/:id', function(id) {
-				if (data.searchedMovies) {//has data been collected then continue
-					sections.displaySection("movie");
-					sections.renderMoviePage(id);
+			routie('wedstrijdinfo/:competitionname/:id', function(competitionname, id) {
+				if (data.matches) {
+					sections.renderMatchinfo(competitionname,id);
+					sections.displaySection("matchinfo");
+					sections.changeBallKeeper(false);
 				} else {
-					routie('movies');
-				};
+					routie('programma');
+				}
+				
+			});
+			routie('wedstrijd/:competitionname/:id', function(competitionname,id) {
+				if (data.matches) {
+					sections.renderMatch(competitionname,id);
+					sections.displaySection("match");
+					sections.changeBallKeeper(true);
+				} else {
+					routie('programma');
+				}
+			});
+			routie('event/:name', function(name) {
+				if (data.matches) {
+					sections.renderEvent(name);
+					sections.displaySection("eventinfo");
+					sections.changeBallKeeper(false);
+				} else {
+					routie('programma');
+				}
 			});
 		}
 
 	};
-
+	var ballInterval;
+	var eventInterval;
 	var sections = {
-		// setupMovieSearched : function (input) {
-			
-		// 	if (data.searchedMovies) {
-		// 		Transparency.render(htmlElements.moviesTemplate,"");
-		// 		data.oldSearchedMovies = _.filter(data.searchedMovies.results, function(item){
-		// 			return item.vote_average > 5.5;
-		// 		});
-		// 	}
+		changeBallKeeper : function (onoroff) {
+			sections.randomEvent(onoroff);
+			if (onoroff) {
+				ballInterval = window.setInterval(selectPlayer, 2500);
+				var players = document.querySelectorAll('#match p');
+				function selectPlayer() {
+					var playerNumber = Math.floor(Math.random() * (26));
+					removeHasBall();
+					players[playerNumber].classList.add("hasball");
+				};
+				function removeHasBall(){
+					for (var i = 0; i < players.length; i++) {
+						players[i].classList.remove("hasball");
+					};
+				};
+			} else {
+				clearInterval(ballInterval);
+			}
 
-		// 	htmlElements.moviesTemplateLoader.classList.add("loader");	
-			
-		// 	data.searchMovie(input,"searchedMovies");
-		// },
+		},
+		randomEvent : function (onoroff) {
+			if (onoroff) {
+				eventInterval = window.setInterval(whiteOrBlue, 5000);
+				function whiteOrBlue() {
+					var two = Math.floor(Math.random() * (2));
+					selectPlayer(two);
+				};
+				function selectPlayer(whiteOrBlue){
+					var playerNumber = Math.floor(Math.random() * (12 - 0 + 1)) + 0;
+					var player = document.querySelectorAll('#match p');
+					var number = player[playerNumber].firstChild.innerText;
+					var color = "";
+					if (whiteOrBlue == 0) {
+						color = "w";
+					} else {
+						color = "b";
+					}
+					sections.createEvent(color + number);
+				};
+			} else {
+				clearInterval(eventInterval);
+			}
+
+		},
+		createEvent : function (player) {
+			var eventNumber = Math.floor(Math.random() * (data.matches.events.length));
+			var name = data.matches.events[eventNumber].name;
+
+			htmlElements.eventMessage.innerHTML= "<a href='#event/"+ name + "'>"+ player + "  " + name +"</a>";
+		},
+		renderEvent: function (name) {
+			var temp = htmlElements.eventinfoTemplate;
+			var eventinfo = _.find(data.matches.events,function(item){ return item.name == name;})
+			Transparency.render(temp,eventinfo);
+		},
 		renderProgram : function () {
 			var temp = htmlElements.programTemplate;
+			var competitionName = ""
+			var program = data.matches;
 
-			var program = data.matches.matches;
 			var directives = {
-				deeplink : {
-					href : function (params) {
-						return "#wedstrijdinfo/" + this.id;
+				competitions : {
+					compname : {
+						text: function() {
+							competitionName = this.name;
+							return this.name;
+						}
+					},
+					matches : {
+						deeplink : {
+							href : function (params) {
+								return "#wedstrijdinfo/" + competitionName + "/" + this.id;
+							}
+						},
+						vs : {
+							text: function(params) {
+						      return this.team1 + " - " + this.team2;
+						    }
+						}
 					}
-				},
-				vs : {
-					text: function(params) {
-				      return this.team1 + " vs " + this.team2;
-				    }
 				}
-
 			};
 			//htmlElements.moviesTemplateLoader.classList.remove("loader");
 			Transparency.render(temp,program,directives);
 		},
-		renderMatchinfo : function (id) {
+		renderMatchinfo : function (competitionname,id) {
 			//var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
 			var matchId = id;
-			var matchinfo = _.find(data.matches.matches,function(item){ return item.id == matchId;})
+			var competitionName = competitionname;
+			var compinfo = _.find(data.matches.competitions,function(item){ return item.name == competitionName;})
+			var matchinfo = _.find(compinfo.matches,function(item){ return item.id == matchId;})
 			var temp = htmlElements.matchinfoTemplate;
-			Transparency.render(temp,matchinfo);
+
+			var directives = {
+				matchvideo : {
+					href : function (params) {
+						return this.video;
+					}
+				},
+				matchlink : {
+					href : function (params) {
+						return "#wedstrijd/" + competitionName + "/" + this.id;
+					},
+					text : function () {
+						return "de wedstrijd"
+					}
+				}
+			};
+
+			Transparency.render(temp,matchinfo,directives);
+		},
+		renderMatch : function (competitionname,id) {
+			//var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
+			var matchId = id;
+			var competitionName = competitionname;
+			var compinfo = _.find(data.matches.competitions,function(item){ return item.name == competitionName;})
+			var matchinfo = _.find(compinfo.matches,function(item){ return item.id == matchId;})
+			var team1info = _.find(compinfo.teams,function(item){ return item.team == matchinfo.team1;})
+			var team2info = _.find(compinfo.teams,function(item){ return item.team == "Hongarije";})//matchinfo.team2
+			var temp = htmlElements.matchTemplate;
+
+			matchinfo.team1Athletes = team1info.athletes;
+			matchinfo.team2Athletes = team2info.athletes;
+
+			var directives = {
+				// matchvideo : {
+				// 	href : function (params) {
+				// 		return this.video;
+				// 	}
+				// },
+				// matchlink : {
+				// 	href : function (params) {
+				// 		return "#wedstrijd/" + competitionName + "/" + this.id;
+				// 	},
+				// 	text : function () {
+				// 		return "de wedstrijd"
+				// 	}
+				// },
+			};
+
+			Transparency.render(temp,matchinfo,directives);
 		},
 		hideAllSections : function () {
 			var sections = htmlElements.sections;

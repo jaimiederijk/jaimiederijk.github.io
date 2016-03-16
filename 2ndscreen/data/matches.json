@@ -1,16 +1,198 @@
-{
-	"matches" : [
+{	"competitions" : [
 		{
-			"id" : 0,
-			"team1" : "Nederland",
-			"team2" : "Verenigde Staten",
-			"datum" : ""
+			"name" : "EK Waterpolo Dames",
+			"matches" : [
+					{
+						"id" : 0,
+						"team1" : "Nederland",
+						"team2" : "Hongarije",
+						"date" : "10-01-2016",
+						"time"	: "15:15",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 1,
+						"team1" : "Nederland",
+						"team2" : "Turkije",
+						"date" : "12-01-2016",
+						"time"	: "12:30",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 2,
+						"team1" : "Nederland",
+						"team2" : "Portugal",
+						"date" : "14-01-2016",
+						"time"	: "11:00",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 3,
+						"team1" : "Rusland",
+						"team2" : "Nederland",
+						"date" : "16-01-2016",
+						"time"	: "15:45",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 4,
+						"team1" : "Nederland",
+						"team2" : "Griekenland",
+						"date" : "18-01-2016",
+						"time"	: "12:30",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 5,
+						"team1" : "Nederland",
+						"team2" : "Duitsland",
+						"date" : "20-01-2016",
+						"time"	: "13:30",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 6,
+						"team1" : "Nederland",
+						"team2" : "Spanje",
+						"date" : "21-01-2016",
+						"time"	: "13:30",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					},
+					{
+						"id" : 7,
+						"team1" : "Nederland",
+						"team2" : "Hongarije",
+						"date" : "22-01-2016",
+						"time"	: "20:15",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+					}
+				],
+			"teams" : [
+				{
+					"team" : "Nederland",
+					"athletes" : [
+						{
+							"name" : "Debby Willemsz",
+							"number" : "13"
+						},
+						{
+							"name" : "Laura Aarts",
+							"number" : "1"
+						},
+						{
+							"name" : "Yasemin Smit",
+							"number" : "2"
+						},
+						{
+							"name" : "Lieke Klaassen",
+							"number" : "11"
+						},
+						{
+							"name" : "Dagmar Genee",
+							"number" : "3"
+						},
+						{
+							"name" : "Amarens Genee",
+							"number" : "5"
+						},
+						{
+							"name" : "Maud Megens",
+							"number" : "9"
+						},
+						{
+							"name" : "Nomi Stomphorst",
+							"number" : "6"
+						},
+						{
+							"name" : "Sabrina van der Sloot",
+							"number" : "4"
+						},
+						{
+							"name" : "Isabella van Toorn",
+							"number" : "10"
+						},
+						{
+							"name" : "Marloes Nijhuis",
+							"number" : "7"
+						},
+						{
+							"name" : "Vivian Sevenich",
+							"number" : "8"
+						},
+						{
+							"name" : "Leonie van der Molen",
+							"number" : "12"
+						}
+					]
+				},
+				{
+					"team" : "Hongarije",
+					"athletes" : [
+						{
+							"name" : "Edina Gangl",
+							"number" : "1"
+						},
+						{
+							"name" : "Dora CZIGANY",
+							"number" : "2"
+						},
+						{
+							"name" : "Dora ANTAL",
+							"number" : "3"
+						},
+						{
+							"name" : "Hanna Anna KISTELEKI",
+							"number" : "4"
+						},
+						{
+							"name" : "Gabriella SZUCS",
+							"number" : "5"
+						},
+						{
+							"name" : "Orsolya TAKACS",
+							"number" : "6"
+						},
+						{
+							"name" : "Anna Krisztina ILLES",
+							"number" : "7"
+						},
+						{
+							"name" : "Rita KESZTHELYI",
+							"number" : "8"
+						},
+						{
+							"name" : "Ildiko TOTH",
+							"number" : "9"
+						},
+						{
+							"name" : "Barbara BUJKA",
+							"number" : "10"
+						},
+						{
+							"name" : "Dora CSABAI",
+							"number" : "11"
+						},
+						{
+							"name" : "Krisztina GARDA",
+							"number" : "12"
+						},
+						{
+							"name" : "Orsolya KASO",
+							"number" : "13"
+						}
+					]
+				}
+			]
+		}
+	],	
+	"events" : [
+		{
+			"name": "u20",
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20."
 		},
 		{
-			"id" : 1,
-			"team1" : "Nederland",
-			"team2" : "Polen",
-			"datum" : ""
+			"name" : "strafworp",
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20."
 		}
-	]
+	]	
 }
