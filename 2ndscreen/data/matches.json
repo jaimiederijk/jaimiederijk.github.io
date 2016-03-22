@@ -72,56 +72,108 @@
 					"team" : "Nederland",
 					"athletes" : [
 						{
-							"name" : "Debby Willemsz",
-							"number" : "13"
-						},
-						{
 							"name" : "Laura Aarts",
-							"number" : "1"
-						},
+							"number" : "1",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":2
+						},						
 						{
 							"name" : "Yasemin Smit",
-							"number" : "2"
-						},
-						{
-							"name" : "Lieke Klaassen",
-							"number" : "11"
+							"number" : "2",
+							"lr":"R",
+							"role":"Driver",
+							"goals":6,
+							"p":2
 						},
 						{
 							"name" : "Dagmar Genee",
-							"number" : "3"
-						},
-						{
-							"name" : "Amarens Genee",
-							"number" : "5"
-						},
-						{
-							"name" : "Maud Megens",
-							"number" : "9"
-						},
-						{
-							"name" : "Nomi Stomphorst",
-							"number" : "6"
+							"number" : "3",
+							"lr":"R",
+							"role":"Point",
+							"goals":15,
+							"p":8
 						},
 						{
 							"name" : "Sabrina van der Sloot",
-							"number" : "4"
+							"number" : "4",
+							"lr":"R",
+							"role":"Driver",
+							"goals":9,
+							"p":6
+						},						
+						{
+							"name" : "Amarens Genee",
+							"number" : "5",
+							"lr":"R",
+							"role":"Driver",
+							"goals":7,
+							"p":10
 						},
 						{
-							"name" : "Isabella van Toorn",
-							"number" : "10"
+							"name" : "Nomi Stomphorst",
+							"number" : "6",
+							"lr":"R",
+							"role":"Wing",
+							"goals":5,
+							"p":4
 						},
 						{
 							"name" : "Marloes Nijhuis",
-							"number" : "7"
+							"number" : "7",
+							"lr":"R",
+							"role":"Driver",
+							"goals":4,
+							"p":6
 						},
 						{
 							"name" : "Vivian Sevenich",
-							"number" : "8"
+							"number" : "8",
+							"lr":"L",
+							"role":"Centre Forward",
+							"goals":12,
+							"p":7
+						},
+						{
+							"name" : "Maud Megens",
+							"number" : "9",
+							"lr":"R",
+							"role":"Driver",
+							"goals":8,
+							"p":3
+						},						
+						{
+							"name" : "Isabella van Toorn",
+							"number" : "10",
+							"lr":"R",
+							"role":"Driver",
+							"goals":6,
+							"p":5
+						},
+						{
+							"name" : "Lieke Klaassen",
+							"number" : "11",
+							"lr":"R",
+							"role":"Point",
+							"goals":9,
+							"p":7
 						},
 						{
 							"name" : "Leonie van der Molen",
-							"number" : "12"
+							"number" : "12",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":5,
+							"p":5
+						},
+						{
+							"name" : "Debby Willemsz",
+							"number" : "13",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":1
 						}
 					]
 				},
@@ -130,55 +182,107 @@
 					"athletes" : [
 						{
 							"name" : "Edina Gangl",
-							"number" : "1"
+							"number" : "1",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":0
 						},
 						{
 							"name" : "Dora CZIGANY",
-							"number" : "2"
+							"number" : "2",
+							"lr":"R",
+							"role":"Driver",
+							"goals":4,
+							"p":2
 						},
 						{
 							"name" : "Dora ANTAL",
-							"number" : "3"
+							"number" : "3",
+							"lr":"R",
+							"role":"Wing",
+							"goals":6,
+							"p":3
 						},
 						{
 							"name" : "Hanna Anna KISTELEKI",
-							"number" : "4"
+							"number" : "4",
+							"lr":"R",
+							"role":"Wing",
+							"goals":7,
+							"p":5
 						},
 						{
 							"name" : "Gabriella SZUCS",
-							"number" : "5"
+							"number" : "5",
+							"lr":"L",
+							"role":"Wing",
+							"goals":6,
+							"p":1
 						},
 						{
 							"name" : "Orsolya TAKACS",
-							"number" : "6"
+							"number" : "6",
+							"lr":"R",
+							"role":"Wing",
+							"goals":3,
+							"p":1
 						},
 						{
 							"name" : "Anna Krisztina ILLES",
-							"number" : "7"
+							"number" : "7",
+							"lr":"R",
+							"role":"Driver",
+							"goals":3,
+							"p":4
 						},
 						{
 							"name" : "Rita KESZTHELYI",
-							"number" : "8"
+							"number" : "8",
+							"lr":"R",
+							"role":"Wing",
+							"goals":4,
+							"p":3
 						},
 						{
 							"name" : "Ildiko TOTH",
-							"number" : "9"
+							"number" : "9",
+							"lr":"R",
+							"role":"Point",
+							"goals":15,
+							"p":7
 						},
 						{
 							"name" : "Barbara BUJKA",
-							"number" : "10"
+							"number" : "10",
+							"lr":"R",
+							"role":"Wing",
+							"goals":5,
+							"p":7
 						},
 						{
 							"name" : "Dora CSABAI",
-							"number" : "11"
+							"number" : "11",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":13,
+							"p":8
 						},
 						{
 							"name" : "Krisztina GARDA",
-							"number" : "12"
+							"number" : "12",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":9,
+							"p":6
 						},
 						{
 							"name" : "Orsolya KASO",
-							"number" : "13"
+							"number" : "13",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":0
 						}
 					]
 				}
@@ -188,12 +292,12 @@
 	"events" : [
 		{
 			"name": "u20",
-			"explanation" : "Zware overtredingen zoals iemand onderduwen tijdens het zwemmen worden bestraft met een strafworp",
+			"explanation" : "Zware overtredingen zoals iemand onderduwen tijdens het zwemmen worden bestraft met een U20",
 			"image":"static/images/Water_Polo_Basics.jpg"
 		},
 		{
 			"name" : "strafworp",
-			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een U20. Bij een U20 moet de bestrafte speler naar de hoek zwemmen bij de eigen doellijn tegenover de tafel van het wedstrijdsecretariaat (waar de score en tijd worden bijgehouden), en moet daar 20 seconden blijven liggen tenzij in die tijd de bal in bezit komt van de eigen partij. Dan mag de bestrafte speler weer de hoek verlaten. Wanneer hij nog niet in de hoek ligt, moet hij daar echter alsnog eerst naartoe zwemmen. Het weggooien van een bal nadat er gefloten is voor een overtreding wordt ook bestraft met een U20.",
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een strafworp.",
 			"image":"static/images/Water_Polo_Basics.jpg"
 		}
 	]	

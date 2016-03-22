@@ -33,7 +33,8 @@
     </section>
     <section id="matchinfo">
     	<div id="template-matchinfo">
-            <h2>wedstrijd: <span data-bind="team1"></span>-<span data-bind="team2"></span></h2>
+            <h2>Wedstrijd: <span data-bind="team1"></span>-<span data-bind="team2"></span></h2>
+            <h3 data-bind = "matchstarttimer" class="matchtimer"></h3>
             <a data-bind = "matchvideo">video</a>
             <a data-bind = "matchlink"></a>
         </div>
@@ -41,12 +42,28 @@
     <section id="match">
         <div id="template-match">
             <h2><span data-bind="team1"></span> - <span data-bind="team2"></span></h2>
-            <div id="event"><a  data-bind="event"> </a></div>
-            <div data-bind="team1Athletes">
-                <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+            
+            <div id="event">
+                
+                <a data-bind="event"></a>
             </div>
-            <div data-bind="team2Athletes">  
-                <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+            <div class="team" data-bind="team1Athletes">
+                <div class="athlete">
+                    <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+                    <ul class="playerdata">
+                        <li data-bind="goals">Goals:</li>
+                        <li data-bind="p">Persoonlijke fouten:</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="team" data-bind="team2Athletes">
+                <div class="athlete">
+                    <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+                    <ul class="playerdata">
+                            <li data-bind="goals">Goals:</li>
+                            <li data-bind="p">Persoonlijke fouten:</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>

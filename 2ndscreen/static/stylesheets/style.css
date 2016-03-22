@@ -4,10 +4,19 @@ body {
   overflow-x: hidden;
   font-family: 'Open Sans', 'Helvetica Neue', 'Arial', sans-serif;
   color: white;
-      background-color: rgb(46, 46, 46);
+  background-color: #272727;
 }
 a {
   color:white;
+  text-decoration: none;
+  display: block;
+  border-radius: 4px;
+  margin: 1rem;
+  padding: 0.1rem 0.5rem;
+  box-shadow: 0 0 0 2px #ffffff;
+}
+a:hover {
+  box-shadow: 0 0 0 2px #ff6d00;
 }
 h1 {    
   margin-left: 1rem;
@@ -25,8 +34,40 @@ section {
    transform: translate3d(0, 0, 0);
    transform: translateX(100vw);
 }
+.playerdata li {
+  list-style-type: square;
+
+}
+.playerdata {
+  max-height: 500px; 
+  overflow: hidden;
+  margin: 0;
+  transition:0.5s;
+}
+.hideplayerdata {
+  max-height: 0px;
+}
+.hideplayer {
+  display: none;
+}
 .show {
   transform:translateX(0);
+}
+
+
+#template-match .team {
+  margin-bottom: 0;
+  margin-top: 0;
+  color: #0E0C76;
+  display: block;
+  width: 45vw;
+  height: 70vh;
+  padding: 0.3rem;
+  background-color: rgb(244, 244, 244);
+}
+#template-match .team:last-of-type {
+  color: rgb(244, 244, 244);
+  background-color: #00385D;
 }
 #template-program > div {
  width: 80vw;
@@ -39,13 +80,19 @@ section {
   flex-wrap:  wrap;
   justify-content: space-around;
 }
-#template-match p {
-  margin-bottom: 0;
-  margin-top: 0;
-  display: block;
-  width: 45vw;
-    padding: 0.3rem;
-    background-color: rgb(67, 60, 60);
+
+button {
+  width: 46vw;
+    /* position: absolute; */
+    font-size: 1.2em;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+    transform: translateY( -1rem);
+    border: none;
+    box-shadow: 0 0 0 2px #ffffff;
+    /*margin: 0 2vw;*/
+    border-radius: 4px;
+    /* margin-top: -55rem; */
 }
 
 #event  {
@@ -53,14 +100,33 @@ section {
 margin-bottom: 1rem;
   text-align: center;
   font-size: 1.5em;
-  /*border: black solid 5px;*/
+      width: 100vw;
+      display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 #event a {
-  text-decoration: none;
-  color: rgb(255, 104, 0);
-  display: block;
-  width: 90vw;
-  padding:2em 0;
+     text-decoration: none;
+    color: rgb(255, 104, 0);
+    /* display: block; */
+    width: 46vw;
+    box-shadow: none;
+    /* display: block; */
+    margin: 0rem 0 1rem 0;
+    padding: 2rem 0;
+}
+#event p {
+  width: 46vw;
+    /* display: block; */
+    margin: 0rem 0 1rem 0;
+    padding: 2rem 0;
+}
+#event h3 {
+    /*position: absolute;*/
+        width: 100vw;
+    margin: 0 1rem;
+    text-align: left;
+    /*transform: translate(1rem ,-1rem);*/
 }
 
 #template-eventinfo {
@@ -70,9 +136,14 @@ margin-bottom: 1rem;
   width: 90vw;
 }
 .hasball {
-  color: rgb(255, 104, 0);
-  /*border: red solid 5px;*/
+    color: rgb(255, 104, 0);
+    box-shadow: 0 0 0 2px rgb(255, 104, 0);
+    border-radius: 4px;
 }
+.athlete p {
+  margin: 0.5rem;
+}
+
 /*http://projects.lukehaas.me/css-loaders/*/
 .loader,
 .loader:before,
