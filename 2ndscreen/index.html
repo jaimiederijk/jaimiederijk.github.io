@@ -34,7 +34,7 @@
     <section id="matchinfo">
     	<div id="template-matchinfo">
             <h2>Wedstrijd: <span data-bind="team1"></span>-<span data-bind="team2"></span></h2>
-            <h3 data-bind = "matchstarttimer" class="matchtimer"></h3>
+            <h3 data-bind = "matchstarttimer" class="matchtimer">wedstrijd start over</h3>
             <a data-bind = "matchvideo">video</a>
             <a data-bind = "matchlink"></a>
         </div>
@@ -72,6 +72,27 @@
             <h2 data-bind="name"></h2>
             <p data-bind="explanation"></p>
             <img data-bind="eventimage" alt="">
+        </div>
+    </section>
+    <section id="afteractionreport">
+        <div id="template-aar">
+            <h2><span data-bind="team1"></span> - <span data-bind="team2"></span></h2>
+            <h3>stand: <span data-bind="stand"></span></h3>
+            <h3>tijdlijn:</h3>
+            <div data-bind="matchreport">
+                <ul data-bind="1">
+                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span><p><span data-bind="mening"></span> mee eens</p></li>
+                </ul>
+                <ul data-bind="2">
+                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
+                </ul>
+                <ul data-bind="3">
+                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
+                </ul>
+                <ul data-bind="4">
+                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
+                </ul>
+            </div>
         </div>
     </section>
     <script type="text/javascript" src="static/js/lib/transparency.min.js"></script>

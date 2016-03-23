@@ -8,7 +8,52 @@
 						"team2" : "Hongarije",
 						"date" : "10-01-2016",
 						"time"	: "15:15",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8",
+						"matchreport": {
+							"1":[
+									{
+										"tijd":"4:21",
+										"actie":"u20",
+										"mening" : "70%"
+									},
+									{
+										"tijd":"2:25",
+										"actie":"strafworp",
+										"mening" : "50%"
+									}
+								],
+							"2" : [
+									{
+										"tijd":"4:21",
+										"actie":"u20"
+									},
+									{
+										"tijd":"1:15",
+										"actie":"strafworp"
+									}
+								],
+							"3":[
+									{
+										"tijd":"5:21",
+										"actie":"u20"
+									},
+									{
+										"tijd":"2:25",
+										"actie":"strafworp"
+									}
+								],
+							"4" : [
+									{
+										"tijd":"3:21",
+										"actie":"u20"
+									},
+									{
+										"tijd":"2:22",
+										"actie":"strafworp"
+									}
+								]
+						}
 					},
 					{
 						"id" : 1,
@@ -16,7 +61,8 @@
 						"team2" : "Turkije",
 						"date" : "12-01-2016",
 						"time"	: "12:30",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 2,
@@ -24,7 +70,8 @@
 						"team2" : "Portugal",
 						"date" : "14-01-2016",
 						"time"	: "11:00",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 3,
@@ -32,7 +79,8 @@
 						"team2" : "Nederland",
 						"date" : "16-01-2016",
 						"time"	: "15:45",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 4,
@@ -40,7 +88,8 @@
 						"team2" : "Griekenland",
 						"date" : "18-01-2016",
 						"time"	: "12:30",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 5,
@@ -48,7 +97,8 @@
 						"team2" : "Duitsland",
 						"date" : "20-01-2016",
 						"time"	: "13:30",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 6,
@@ -56,7 +106,8 @@
 						"team2" : "Spanje",
 						"date" : "21-01-2016",
 						"time"	: "13:30",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					},
 					{
 						"id" : 7,
@@ -64,7 +115,8 @@
 						"team2" : "Hongarije",
 						"date" : "22-01-2016",
 						"time"	: "20:15",
-						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379"
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
 					}
 				],
 			"teams" : [

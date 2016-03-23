@@ -12,10 +12,12 @@
 		matchinfo : document.querySelector("#matchinfo"),
 		program : document.querySelector("#program"),
 		match : document.querySelector("#match"),
+		afterActionReport : document.querySelector("#afteractionreport"),
 		eventinfoTemplate: document.querySelector("#template-eventinfo"),
 		matchinfoTemplate: document.querySelector("#template-matchinfo"),
 		programTemplate: document.querySelector("#template-program"),
-		matchTemplate: document.querySelector("#template-match")
+		matchTemplate: document.querySelector("#template-match"),
+		aarTemplate: document.querySelector("#template-aar")
 	};
 	var app = {
 		init: function() {
@@ -53,8 +55,17 @@
 				if (data.matches) {
 					sections.renderMatch(competitionname,id);
 					sections.displaySection("match");
-					htmlElements.eventMessage.innerHTML= "<h3>Gebeurtenis:</h3><p>Wit 1</p><a href='#event/u20'>u20</a><button>niet eens</button><button>mee eens</button>"//"<a href='#event/start'>start van de wedstrijd</a>";
+					htmlElements.eventMessage.innerHTML= "<p>Wit 1</p><a href='#event/u20'>u20<button>?</button></a><button>niet eens</button><button>mee eens</button>"//"<a href='#event/start'>start van de wedstrijd</a>";
 					sections.changeBallKeeper(true);
+					window.clearInterval(startMatchInterval);
+				} else {
+					routie('programma');
+				}
+			});
+			routie('aar/:competitionname/:id', function(competitionname,id) {
+				if (data.matches) {
+					sections.renderAar(competitionname,id);
+					sections.displaySection("afterActionReport");
 					window.clearInterval(startMatchInterval);
 				} else {
 					routie('programma');
@@ -115,7 +126,7 @@
 					selectPlayer(two);
 				};
 				function selectPlayer(whiteOrBlue){
-					var playerNumber = Math.floor(Math.random() * (12 - 0 + 1)) + 0;
+					var playerNumber = Math.floor(Math.random() * (6 - 0 + 1)) + 0;
 					var player = document.querySelectorAll('#match p');
 					var number = player[playerNumber].firstChild.innerText;
 					var color = "";
@@ -136,8 +147,8 @@
 			var eventNumber = Math.floor(Math.random() * (data.matches.events.length));
 			var name = data.matches.events[eventNumber].name;
 
-			htmlElements.eventMessage.innerHTML= "<h3>Gebeurtenis:</h3><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a><button>niet eens</button><button>mee eens</button>";
-		},
+			htmlElements.eventMessage.innerHTML= "<p>"+player+"</p><a href='#event/"+name+"'>"+name+"<button>?</button></a><button>niet eens</button><button>mee eens</button>";
+		},//<h3>Gebeurtenis:</h3>
 		startMatchTimer: function () {
 			startMatchInterval = window.setInterval(countdown,1000);
 			var timerSec = 30
@@ -280,12 +291,55 @@
 			sections.hideAllPlayerData();
 			sections.hidePlayer();
 		},
+		renderAar :function (competitionname,id) {
+			var matchId = id;
+			var competitionName = competitionname;
+			var compinfo = _.find(data.matches.competitions,function(item){ return item.name.replace(/\s+/g, '') == competitionName;})
+			var matchinfo = _.find(compinfo.matches,function(item){ return item.id == matchId;})
+			var team1info = _.find(compinfo.teams,function(item){ return item.team == matchinfo.team1;})
+			var team2info = _.find(compinfo.teams,function(item){ return item.team == "Hongarije";})//matchinfo.team2
+			var temp = htmlElements.aarTemplate;
+
+
+
+			matchinfo.team1Athletes = team1info.athletes;
+			matchinfo.team2Athletes = team2info.athletes;
+
+			var directives = {
+				team1Athletes : {
+					goals : {
+						text : function (params) {
+							return params.value + " " +  this.goals;
+						}
+					},
+					p : {
+						text : function (params) {
+							return params.value + " " +  this.p;
+						}
+					}
+				},
+				team2Athletes : {
+					goals : {
+						text : function (params) {
+							return params.value + " " +  this.goals;
+						}
+					},
+					p : {
+						text : function (params) {
+							return params.value + " " +  this.p;
+						}
+					}
+				}
+			};
+
+			Transparency.render(temp,matchinfo,directives);
+		},
 		hideAllPlayerData : function() {
 			var playerData =  document.querySelectorAll('.playerdata');
 			for (var i = 0; i < playerData.length; i++) { //hide all sections via loop
 				playerData[i].classList.add("hideplayerdata");
 				//sections[i].classList.remove("notransition");
-			};			
+			};
 		},
 		hidePlayer : function() {
 			var player =  document.querySelectorAll('.athlete')
