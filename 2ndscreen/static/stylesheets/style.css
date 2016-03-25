@@ -137,7 +137,9 @@ margin-bottom: 1rem;
 #afteractionreport {
   margin: 0 1rem;
 }
-
+#matchreport p {
+  color: #ff6d00;
+}
 
 #matchinfo {
   margin:  0 1rem;

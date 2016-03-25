@@ -26,31 +26,37 @@
 							"2" : [
 									{
 										"tijd":"4:21",
-										"actie":"u20"
+										"actie":"u20",
+										"mening" : "50%"
 									},
 									{
 										"tijd":"1:15",
-										"actie":"strafworp"
+										"actie":"strafworp",
+										"mening" : "50%"
 									}
 								],
 							"3":[
 									{
 										"tijd":"5:21",
-										"actie":"u20"
+										"actie":"u20",
+										"mening" : "50%"
 									},
 									{
 										"tijd":"2:25",
-										"actie":"strafworp"
+										"actie":"strafworp",
+										"mening" : "50%"
 									}
 								],
 							"4" : [
 									{
 										"tijd":"3:21",
-										"actie":"u20"
+										"actie":"u20",
+										"mening" : "50%"
 									},
 									{
 										"tijd":"2:22",
-										"actie":"strafworp"
+										"actie":"strafworp",
+										"mening" : "50%"
 									}
 								]
 						}
