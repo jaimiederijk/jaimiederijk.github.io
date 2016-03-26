@@ -7,17 +7,21 @@
 		sections : document.querySelectorAll('section'),
 		matchTimer : document.querySelector('.matchtimer'),
 		playerData : document.querySelectorAll('.playerdata'),
+		//sections / pages
 		eventinfo : document.querySelector("#eventinfo"),
 		eventMessage : document.querySelector("#event"),
 		matchinfo : document.querySelector("#matchinfo"),
 		program : document.querySelector("#program"),
 		match : document.querySelector("#match"),
 		afterActionReport : document.querySelector("#afteractionreport"),
+		playerInfo : document.querySelector("#playerinfo"),
+		//templates
 		eventinfoTemplate: document.querySelector("#template-eventinfo"),
 		matchinfoTemplate: document.querySelector("#template-matchinfo"),
 		programTemplate: document.querySelector("#template-program"),
 		matchTemplate: document.querySelector("#template-match"),
-		aarTemplate: document.querySelector("#template-aar")
+		aarTemplate: document.querySelector("#template-aar"),
+
 	};
 	var app = {
 		init: function() {
@@ -55,7 +59,7 @@
 				if (data.matches) {
 					sections.renderMatch(competitionname,id);
 					sections.displaySection("match");
-					htmlElements.eventMessage.innerHTML= "<p>Wit 1</p><a href='#event/u20'>u20<button>?</button></a><button>niet eens</button><button>mee eens</button>"//"<a href='#event/start'>start van de wedstrijd</a>";
+					htmlElements.eventMessage.innerHTML= "<p>Wit 4</p><a href='#event/start'>opzwemmen</a>"//"<a href='#event/start'>start van de wedstrijd</a>";
 					sections.changeBallKeeper(true);
 					window.clearInterval(startMatchInterval);
 				} else {
@@ -93,7 +97,7 @@
 			if (onoroff) {
 				ballInterval = window.setInterval(selectPlayer, 2500);
 				var players = document.querySelectorAll('.athlete');
-				var athleteData = document.querySelectorAll('.athlete .playerdata');
+				var athleteData = document.querySelectorAll('.playerdata');
 				function selectPlayer() {
 					var two = Math.floor(Math.random() * (2));
 					var playerNumber;
@@ -126,7 +130,7 @@
 					selectPlayer(two);
 				};
 				function selectPlayer(whiteOrBlue){
-					var playerNumber = Math.floor(Math.random() * (6 - 0 + 1)) + 0;
+					var playerNumber = Math.floor(Math.random() * 6+1);
 					var player = document.querySelectorAll('#match p');
 					var number = player[playerNumber].firstChild.innerText;
 					var color = "";
@@ -147,7 +151,7 @@
 			var eventNumber = Math.floor(Math.random() * (data.matches.events.length));
 			var name = data.matches.events[eventNumber].name;
 
-			htmlElements.eventMessage.innerHTML= "<p>"+player+"</p><a href='#event/"+name+"'>"+name+"<button>?</button></a><button>niet eens</button><button>mee eens</button>";
+			htmlElements.eventMessage.innerHTML= "<p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";
 		},//<h3>Gebeurtenis:</h3>
 		startMatchTimer: function () {
 			startMatchInterval = window.setInterval(countdown,1000);
@@ -157,9 +161,9 @@
 				// console.log(timerSec);
 				if (timerSec==0) {
 					window.clearInterval(startMatchInterval);
-					routie('wedstrijd' + location.hash.substring(14));
+					//routie('wedstrijd' + location.hash.substring(14));
 				};
-				htmlElements.matchTimer.innerHTML = "Begint over "+timerSec +"S";
+				htmlElements.matchTimer.innerHTML = "Begint over: "+timerSec +"S";
 			};
 		},
 		renderEvent: function (name) {
@@ -181,6 +185,11 @@
 			var program = data.matches;
 
 			var directives = {
+				matchstarttimer : {
+					text:function(params) {
+						sections.startMatchTimer();
+					}
+				},
 				competitions : {
 					compname : {
 						text: function() {
@@ -192,7 +201,7 @@
 						deeplink : {
 							href : function (params) {
 								var a = competitionName.replace(/\s+/g, '');
-								return "#wedstrijdinfo/" + a + "/" + this.id;
+								return "#aar/" + a + "/" + this.id;
 							}
 						},
 						vs : {
@@ -306,6 +315,56 @@
 			matchinfo.team2Athletes = team2info.athletes;
 
 			var directives = {
+				matchreport : {
+					1:{
+						gtijd:{
+							text: function (params) {
+								if (this.actie) {
+									return this.vtijd-516 + " S" ;
+								} else {
+									return
+								}
+								
+							}
+						},
+						render : {
+							href: function() {
+								if (this.actie) {
+									return "#event/u20";
+								}
+								else {
+									return
+								}
+							},
+							class: function() {
+								if (this.actie) {
+									return "aarevents";
+								}
+								else {
+									return
+								}
+							}
+						},
+						gspeler : {
+							text: function () {
+								if (this.actie) {
+									return this.speler;
+								}
+								else {
+									return
+								}
+							}
+						}
+						//,
+						// actie :{
+						// 	text: function (params) {
+						// 		if (this.actie) {
+						// 			return this.actie;
+						// 		};
+						// 	}
+						// }
+					}
+				},
 				team1Athletes : {
 					goals : {
 						text : function (params) {

@@ -13,10 +13,10 @@ a {
   border-radius: 4px;
   margin: 1rem;
   padding: 0.1rem 0.5rem;
-  box-shadow: 0 0 0 2px #ffffff;
+  box-shadow: 1px 1px 0 3px #ffffff;
 }
 a:hover {
-  box-shadow: 0 0 0 2px #ff6d00;
+  box-shadow: 1px 1px 0 3px #ff6d00;
 }
 h1 {    
   margin-left: 1rem;
@@ -42,18 +42,34 @@ section {
   max-height: 500px; 
   overflow: hidden;
   margin: 0;
-  transition:0.5s;
+  /*transition:0.5s;*/
+  color: rgb(255, 104, 0);
+  box-shadow: 0 0 0 2px rgb(255, 104, 0);
+  border-radius: 4px;
 }
 .hideplayerdata {
   max-height: 0px;
+  box-shadow: none;
 }
 .hideplayer {
   display: none;
 }
+.playerinfo {
+  width: 100vw;
+  margin: 1rem 0.5rem;
+  background-color: rgb(24,24,24);
+}
+.playerinfo p {
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: white;
+}
 .show {
   transform:translateX(0);
 }
-
+iframe {
+  width: 95vw;
+}
 
 #template-match .team {
   margin-bottom: 0;
@@ -61,20 +77,40 @@ section {
   color: #0E0C76;
   display: block;
   width: 45vw;
-  height: 70vh;
+  /*height: 70vh;*/
   padding: 0.3rem;
   background-color: rgb(244, 244, 244);
 }
-#template-match .team:last-of-type {
+#template-match > .team:nth-of-type(3) {
   color: rgb(244, 244, 244);
   background-color: #00385D;
 }
+
 #template-program > div {
  width: 80vw;
     background-color: #1A1A1A;
     margin: 0 auto;
     padding: 1rem;
 }
+#template-program a{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+#template-program > div > a:first-of-type {
+  margin-bottom: 3rem;
+} 
+#template-program > div > a h3 {
+  width: 100%;
+} 
+.hideprogram {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
 #template-match {
   display: flex;
   flex-wrap:  wrap;
@@ -99,6 +135,7 @@ button {
   background-color: rgb(21, 21, 21);
 margin-bottom: 1rem;
   text-align: center;
+      padding-top: 1rem;
   font-size: 1.5em;
       width: 100vw;
       display: flex;
@@ -114,6 +151,7 @@ margin-bottom: 1rem;
     /* display: block; */
     margin: 0rem 0 1rem 0;
     padding: 2rem 0;
+    box-shadow: 1px 1px 0 3px #ffffff;
 }
 #event a button {
   box-shadow: 0 0 0 2px #ff6d00;
@@ -121,7 +159,7 @@ margin-bottom: 1rem;
     transform: translate(1rem,0);
 }
 #event p {
-  width: 30vw;
+  width: 28vw;
     /* display: block; */
     margin: 0rem 0 1rem 0;
     padding: 2rem 0;
@@ -139,6 +177,18 @@ margin-bottom: 1rem;
 }
 #matchreport p {
   color: #ff6d00;
+}
+#matchreport a {
+  padding: 0;
+  box-shadow: none;
+}
+#template-aar #matchreport .aarevents {
+  width: 82vw;
+  padding: 0.2rem 0 0.2rem 0.5rem;
+  box-shadow: 1px 1px 0 3px #ffffff; 
+}
+.aaraction {
+  color: rgb(255, 104, 0);
 }
 
 #matchinfo {

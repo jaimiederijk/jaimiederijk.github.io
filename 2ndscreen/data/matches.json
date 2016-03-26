@@ -13,50 +13,233 @@
 						"matchreport": {
 							"1":[
 									{
-										"tijd":"4:21",
-										"actie":"u20",
-										"mening" : "70%"
+									"tijd":"0.00",
+									"vtijd":"516",
+									"speler":"W4",
+									"actie":"start"
+									},
+										{
+									"tijd":"0.02",
+									"vtijd":"518",
+									"speler":"W9"
+									},
+										{
+									"tijd":"0.00",
+									"vtijd":"519",
+									"speler":"W11"
+									},
+										{
+									"tijd":"0.00",
+									"vtijd":"525",
+									"speler":"W9"
+									},
+										{
+									"tijd":"0.00",
+									"vtijd":"532",
+									"speler":"W11"
+									},
+										{
+									"tijd":"0.00",
+									"vtijd":"537",
+									"speler":"W6"
+									},
+										{
+									"tijd":"0.00",
+									"vtijd":"543",
+									"speler":"W11"
+									},	{
+									"tijd":"0.00",
+									"vtijd":"545",
+									"speler":"W6"
+									},	{
+									"tijd":"0.00", 
+									"vtijd":"547",
+									"speler":"b3",
+									"actie":"vrijebal blauw"
+									},	{			
+									"tijd":"5.55",
+									"vtijd":"555",
+									"speler":"b3",
+									"actie":"u20 w2 voor vastpakken"
+									},{
+									"tijd":"0.00",
+									"vtijd":"607",
+									"speler":"b5"
+									},{
+									"tijd":"0.00",
+									"vtijd":"609",
+									"speler":"b8"
+									},{
+									"tijd":"0.00",
+									"vtijd":"613",
+									"speler":"b3"
+									},{
+									"tijd":"0.00",
+									"vtijd":"616",
+									"speler":"b4"
+									},{
+									"tijd":"0.00",
+									"vtijd":"618",
+									"speler":"b5"
+									},{
+									"tijd":"0.00",
+									"vtijd":"624",
+									"speler":"b5",
+									"actie":"vrijebal"
+									},{
+									"tijd":"0.00",
+									"vtijd":"627",
+									"speler":"b10"
+									},{
+									"tijd":"0.00",
+									"vtijd":"628",
+									"speler":"b10",
+									"actie":"vrijebal schot op doel"
+									},{
+									"tijd":"0.00",
+									"vtijd":"633",
+									"speler":"w1"
+									},{
+									"tijd":"0.00",
+									"vtijd":"639",
+									"speler":"w11"
+									},{
+									"tijd":"0.00", 
+									"vtijd":"645",
+									"speler":"w11",
+									"actie":"schot op doel"
+									},{
+									"tijd":"0.00",
+									"vtijd":"648",
+									"speler":"b1"
+									},{
+									"tijd":"0.00",
+									"vtijd":"655",
+									"speler":"b5"
+									},{
+									"tijd":"0.00",
+									"vtijd":"704",
+									"speler":"b4",
+									"actie":"vrijebal"
+									},{
+									"tijd":"0.00",
+									"vtijd":"708",
+									"speler":"b5"
+									},{
+									"tijd":"0.00",
+									"vtijd":"710",
+									"speler":"b3"
+									},{
+									"tijd":"0.00",
+									"vtijd":"712",
+									"speler":"b3",
+									"actie":"u20 tegen wit 4  lag bij b10 onderduwen"
+									},{
+									"tijd":"0.00",
+									"vtijd":"715",
+									"speler":"b5"
+									},{
+									"tijd":"0.00",
+									"vtijd":"717",
+									"speler":"b4"
+									},{
+									"tijd":"0.00",
+									"vtijd":"719",
+									"speler":"b3"
+									},{
+									"tijd":"0.00",
+									"vtijd":"720",
+									"speler":"b8"
+									},{
+									"tijd":"0.00",
+									"vtijd":"723",
+									"speler":"b3"
+									},{
+									"tijd":"0.00", 
+									"vtijd":"724",
+									"speler":"b3",
+									"actie":"doelpunt"
+									},{
+									"tijd":"0.00",
+									"vtijd":"728",
+									"speler":"w1"
+									},{
+									"tijd":"0.00",
+									"vtijd":"748",
+									"speler":"w9"
+									},{
+									"tijd":"0.00",
+									"vtijd":"757",
+									"speler":"w11"
+									},{
+									"tijd":"0.00",
+									"vtijd":"800",
+									"speler":"w7"
+									},{
+									"tijd":"0.00",
+									"vtijd":"802",
+									"speler":"w4"
+									}, {
+									"tijd":"0.00", 
+									"vtijd":"804",
+									"speler":"w4",
+									"actie":"u20 door b12 vasthouden"
+									},{
+									"tijd":"0.00",
+									"vtijd":"806",
+									"speler":"w7"
+									},{
+									"tijd":"0.00",
+									"vtijd":"807",
+									"speler":"w6"
+									},{
+									"tijd":"0.00",
+									"vtijd":"809",
+									"speler":"w7"
+									},{
+									"tijd":"0.00",
+									"vtijd":"810",
+									"speler":"w11"
+									},{
+									"tijd":"0.00",
+									"vtijd":"811",
+									"speler":"w9"
 									},
 									{
-										"tijd":"2:25",
-										"actie":"strafworp",
-										"mening" : "50%"
+									"tijd":"0.00",
+									"vtijd":"812",
+									"speler":"w9",
+									"actie":"doelpunt via tater"
 									}
 								],
 							"2" : [
 									{
 										"tijd":"4:21",
-										"actie":"u20",
-										"mening" : "50%"
+										"actie":"u20"
 									},
 									{
 										"tijd":"1:15",
-										"actie":"strafworp",
-										"mening" : "50%"
+										"actie":"strafworp"
 									}
 								],
 							"3":[
 									{
 										"tijd":"5:21",
-										"actie":"u20",
-										"mening" : "50%"
+										"actie":"u20"
 									},
 									{
 										"tijd":"2:25",
-										"actie":"strafworp",
-										"mening" : "50%"
+										"actie":"strafworp"
 									}
 								],
 							"4" : [
 									{
 										"tijd":"3:21",
-										"actie":"u20",
-										"mening" : "50%"
+										"actie":"u20"
 									},
 									{
 										"tijd":"2:22",
-										"actie":"strafworp",
-										"mening" : "50%"
+										"actie":"strafworp"
 									}
 								]
 						}
@@ -121,6 +304,267 @@
 						"team2" : "Hongarije",
 						"date" : "22-01-2016",
 						"time"	: "20:15",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "---"
+					}
+				],
+			"teams" : [
+				{
+					"team" : "Nederland",
+					"athletes" : [
+						{
+							"name" : "Laura Aarts",
+							"number" : "1",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":2
+						},						
+						{
+							"name" : "Yasemin Smit",
+							"number" : "2",
+							"lr":"R",
+							"role":"Driver",
+							"goals":6,
+							"p":2
+						},
+						{
+							"name" : "Dagmar Genee",
+							"number" : "3",
+							"lr":"R",
+							"role":"Point",
+							"goals":15,
+							"p":8
+						},
+						{
+							"name" : "Sabrina van der Sloot",
+							"number" : "4",
+							"lr":"R",
+							"role":"Driver",
+							"goals":9,
+							"p":6
+						},						
+						{
+							"name" : "Amarens Genee",
+							"number" : "5",
+							"lr":"R",
+							"role":"Driver",
+							"goals":7,
+							"p":10
+						},
+						{
+							"name" : "Nomi Stomphorst",
+							"number" : "6",
+							"lr":"R",
+							"role":"Wing",
+							"goals":5,
+							"p":4
+						},
+						{
+							"name" : "Marloes Nijhuis",
+							"number" : "7",
+							"lr":"R",
+							"role":"Driver",
+							"goals":4,
+							"p":6
+						},
+						{
+							"name" : "Vivian Sevenich",
+							"number" : "8",
+							"lr":"L",
+							"role":"Centre Forward",
+							"goals":12,
+							"p":7
+						},
+						{
+							"name" : "Maud Megens",
+							"number" : "9",
+							"lr":"R",
+							"role":"Driver",
+							"goals":8,
+							"p":3
+						},						
+						{
+							"name" : "Isabella van Toorn",
+							"number" : "10",
+							"lr":"R",
+							"role":"Driver",
+							"goals":6,
+							"p":5
+						},
+						{
+							"name" : "Lieke Klaassen",
+							"number" : "11",
+							"lr":"R",
+							"role":"Point",
+							"goals":9,
+							"p":7
+						},
+						{
+							"name" : "Leonie van der Molen",
+							"number" : "12",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":5,
+							"p":5
+						},
+						{
+							"name" : "Debby Willemsz",
+							"number" : "13",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":1
+						}
+					]
+				},
+				{
+					"team" : "Hongarije",
+					"athletes" : [
+						{
+							"name" : "Edina Gangl",
+							"number" : "1",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":0
+						},
+						{
+							"name" : "Dora CZIGANY",
+							"number" : "2",
+							"lr":"R",
+							"role":"Driver",
+							"goals":4,
+							"p":2
+						},
+						{
+							"name" : "Dora ANTAL",
+							"number" : "3",
+							"lr":"R",
+							"role":"Wing",
+							"goals":6,
+							"p":3
+						},
+						{
+							"name" : "Hanna Anna KISTELEKI",
+							"number" : "4",
+							"lr":"R",
+							"role":"Wing",
+							"goals":7,
+							"p":5
+						},
+						{
+							"name" : "Gabriella SZUCS",
+							"number" : "5",
+							"lr":"L",
+							"role":"Wing",
+							"goals":6,
+							"p":1
+						},
+						{
+							"name" : "Orsolya TAKACS",
+							"number" : "6",
+							"lr":"R",
+							"role":"Wing",
+							"goals":3,
+							"p":1
+						},
+						{
+							"name" : "Anna Krisztina ILLES",
+							"number" : "7",
+							"lr":"R",
+							"role":"Driver",
+							"goals":3,
+							"p":4
+						},
+						{
+							"name" : "Rita KESZTHELYI",
+							"number" : "8",
+							"lr":"R",
+							"role":"Wing",
+							"goals":4,
+							"p":3
+						},
+						{
+							"name" : "Ildiko TOTH",
+							"number" : "9",
+							"lr":"R",
+							"role":"Point",
+							"goals":15,
+							"p":7
+						},
+						{
+							"name" : "Barbara BUJKA",
+							"number" : "10",
+							"lr":"R",
+							"role":"Wing",
+							"goals":5,
+							"p":7
+						},
+						{
+							"name" : "Dora CSABAI",
+							"number" : "11",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":13,
+							"p":8
+						},
+						{
+							"name" : "Krisztina GARDA",
+							"number" : "12",
+							"lr":"R",
+							"role":"Centre Forward",
+							"goals":9,
+							"p":6
+						},
+						{
+							"name" : "Orsolya KASO",
+							"number" : "13",
+							"lr":"R",
+							"role":"Goalkeeper",
+							"goals":0,
+							"p":0
+						}
+					]
+				}
+			]
+		},
+		{			
+			"name" : "EK Waterpolo Heren",
+			"matches" : [
+					{
+						"id" : 0,
+						"team1" : "Nederland",
+						"team2" : "Croatie",
+						"date" : "16-01-2016",
+						"time"	: "20:15",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
+					},
+					{
+						"id" : 1,
+						"team1" : "Nederland",
+						"team2" : "Georgia",
+						"date" : "19-01-2016",
+						"time"	: "11:00",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
+					},
+					{
+						"id" : 2,
+						"team1" : "Nederland",
+						"team2" : "Frankrijk",
+						"date" : "21-01-2016",
+						"time"	: "10:30",
+						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
+						"stand" : "7-8"
+					},
+					{
+						"id" : 3,
+						"team1" : "Duitsland",
+						"team2" : "Nederland",
+						"date" : "16-01-2016",
+						"time"	: "09:00",
 						"video" : "http://www.npo.nl/nos-studio-sport/22-01-2016/POW_03107379",
 						"stand" : "7-8"
 					}
@@ -350,13 +794,24 @@
 	"events" : [
 		{
 			"name": "u20",
-			"explanation" : "Zware overtredingen zoals iemand onderduwen tijdens het zwemmen worden bestraft met een U20",
+			"explanation" : "Zware overtredingen zoals iemand onderduwen tijdens het zwemmen worden bestraft met een U20. Wit 2 krijgt hier een u20 vanwege vasthouden van de tegenstander.",
 			"image":"static/images/Water_Polo_Basics.jpg"
 		},
 		{
 			"name" : "strafworp",
 			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een strafworp.",
 			"image":"static/images/Water_Polo_Basics.jpg"
+		},
+		{
+			"name" : "vrijeworp",
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een strafworp.",
+			"image":"static/images/Water_Polo_Basics.jpg"
+		},
+		{
+			"name" : "vrijeworp",
+			"explanation" : "Zware overtredingen zoals iemand vasthouden tijdens het zwemmen worden bestraft met een strafworp.",
+			"image":"static/images/Water_Polo_Basics.jpg"
 		}
 	]	
 }
+

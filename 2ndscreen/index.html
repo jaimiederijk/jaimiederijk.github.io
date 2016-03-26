@@ -16,21 +16,33 @@
             </ul>
         </nav>
     </header>
+
     <section id="program">
     	<h1>Programma</h1>
         <div id="template-program">
-            <div data-bind = "competitions" >
+            <div data-bind = "competitions">
+                
                 <h2 data-bind = "compname"></h2>
+                <h3>Eerst volgende wedstrijd</h3>
+                <a href="#wedstrijd/EKWaterpoloDames/7">
+                    <h2>Nederland - Hongarije</h2>
+                    <span>22-01-2016</span>
+                    <span>20:15</span>
+                    <h3 data-bind = "matchstarttimer" class="matchtimer">Begint over: 30S</h3>
+                </a>
                 <div data-bind= "matches">
+
                     <a data-bind="deeplink">
                         <h2 data-bind="vs"></h2>
-                        <p data-bind="date"></p>
-                        <p data-bind="time"></p>
+                        <span data-bind="date"></span>
+                        <span data-bind="time"></span>
+                        <div><span>stand: </span><span data-bind="stand"></span></div>
                     </a>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="matchinfo">
     	<div id="template-matchinfo">
             <h2>Wedstrijd: <span data-bind="team1"></span>-<span data-bind="team2"></span></h2>
@@ -39,6 +51,7 @@
             <a data-bind = "matchlink"></a>
         </div>
     </section>
+
     <section id="match">
         <div id="template-match">
             <h2><span data-bind="team1"></span> - <span data-bind="team2"></span></h2>
@@ -50,49 +63,78 @@
             <div class="team" data-bind="team1Athletes">
                 <div class="athlete">
                     <p><span data-bind="number"></span> <span data-bind="name"></span></p>
-                    <ul class="playerdata">
-                        <li data-bind="goals">Goals:</li>
-                        <li data-bind="p">Persoonlijke fouten:</li>
-                    </ul>
+                    
                 </div>
             </div>
             <div class="team" data-bind="team2Athletes">
                 <div class="athlete">
                     <p><span data-bind="number"></span> <span data-bind="name"></span></p>
-                    <ul class="playerdata">
+                    <!-- <ul class="playerdata">
                             <li data-bind="goals">Goals:</li>
                             <li data-bind="p">Persoonlijke fouten:</li>
-                    </ul>
+                    </ul> -->
+                </div>
+            </div>
+            <div class="playerinfo">
+                <div data-bind="team1Athletes">
+                    <div class="playerdata">
+                        <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+                        <ul >
+                            
+                            <li data-bind="goals">Goals:</li>
+                            <li data-bind="p">Persoonlijke fouten:</li>
+                            <li ><span>Rol: </span><span data-bind="role"></span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div data-bind="team2Athletes">
+                    <div class="playerdata">
+                        <p><span data-bind="number"></span> <span data-bind="name"></span></p>
+                        <ul >                
+                            <li data-bind="goals">Goals:</li>
+                            <li data-bind="p">Persoonlijke fouten:</li>
+                            <li ><span>Rol: </span><span data-bind="role"></span></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section id="eventinfo">
         <div id="template-eventinfo">
             <h2 data-bind="name"></h2>
             <p data-bind="explanation"></p>
-            <img data-bind="eventimage" alt="">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/38KMnTks8K8?start=226&end=250" frameborder="0" allowfullscreen></iframe>
+            <!-- <img data-bind="eventimage" alt=""> -->
         </div>
     </section>
+
     <section id="afteractionreport">
         <div id="template-aar">
             <h2><span data-bind="team1"></span> - <span data-bind="team2"></span></h2>
             <h3>stand: <span data-bind="stand"></span></h3>
             <h3>tijdlijn:</h3>
             <div id="matchreport" data-bind="matchreport">
-                <ul data-bind="1">
-                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span><p><span data-bind="mening"></span> mee eens</p></li>
-                </ul>
-                <ul data-bind="2">
-                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
-                </ul>
-                <ul data-bind="3">
-                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
-                </ul>
-                <ul data-bind="4">
-                    <li><span data-bind="tijd"></span> <span data-bind="actie"></span></li>
-                </ul>
+                <div data-bind="1">
+                    <a data-bind="render"><span data-bind="gtijd"></span> <span class="aaraction" data-bind="actie"></span> <span data-bind="gspeler"></span></a>
+                </div>
+                <!-- <div data-bind="2">
+                    <a data-bind="render"><span data-bind="gtijd"></span> <span data-bind="actie"></span></a>
+                </div>
+                <div data-bind="3">
+                    <a data-bind="render"><span data-bind="gtijd"></span> <span data-bind="actie"></span></a>
+                </div>
+                <div data-bind="4">
+                    <a data-bind="render"><span data-bind="gtijd"></span> <span data-bind="actie"></span></a>
+                </div> -->
             </div>
+        </div>
+    </section>
+
+    <section id="playerinfo">
+        <div id="template-playerinfo">
+
         </div>
     </section>
     <script type="text/javascript" src="static/js/lib/transparency.min.js"></script>
