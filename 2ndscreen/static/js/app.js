@@ -41,6 +41,7 @@
 			routie('programma', function() {
 				sections.changeBallKeeper(false);
 				sections.displaySection("program");
+				sections.renderHeader();
 				window.clearInterval(startMatchInterval);
 			});
 			routie('wedstrijdinfo/:competitionname/:id', function(competitionname, id) {
@@ -49,7 +50,7 @@
 					sections.renderMatchinfo(competitionname,id);
 					sections.displaySection("matchinfo");
 					sections.changeBallKeeper(false);
-					
+					sections.renderHeader();
 				} else {
 					routie('programma');
 				}
@@ -62,6 +63,7 @@
 					htmlElements.eventMessage.innerHTML= "<p>Wit 4</p><a href='#event/start'>opzwemmen</a>"//"<a href='#event/start'>start van de wedstrijd</a>";
 					sections.changeBallKeeper(true);
 					window.clearInterval(startMatchInterval);
+					sections.renderHeader();
 				} else {
 					routie('programma');
 				}
@@ -71,6 +73,7 @@
 					sections.renderAar(competitionname,id);
 					sections.displaySection("afterActionReport");
 					window.clearInterval(startMatchInterval);
+					sections.renderHeader();
 				} else {
 					routie('programma');
 				}
@@ -81,6 +84,7 @@
 					sections.displaySection("eventinfo");
 					sections.changeBallKeeper(false);
 					window.clearInterval(startMatchInterval);
+					sections.renderHeader();
 				} else {
 					routie('programma');
 				}
@@ -95,6 +99,7 @@
 		changeBallKeeper : function (onoroff) {
 			sections.randomEvent(onoroff);
 			if (onoroff) {
+				clearInterval(ballInterval);
 				ballInterval = window.setInterval(selectPlayer, 2500);
 				var players = document.querySelectorAll('.athlete');
 				var athleteData = document.querySelectorAll('.playerdata');
@@ -109,10 +114,13 @@
 					
 					removeHasBall();
 					players[playerNumber].classList.add("hasball");
-					athleteData[playerNumber].classList.remove("hideplayerdata");
+					if (onoroff!="choose") {
+						sections.hideAllPlayerData();
+						athleteData[playerNumber].classList.remove("hideplayerdata");
+					};
 				};
 				function removeHasBall(){
-					sections.hideAllPlayerData();
+					
 					for (var i = 0; i < players.length; i++) {
 						players[i].classList.remove("hasball");
 					};
@@ -166,6 +174,28 @@
 				htmlElements.matchTimer.innerHTML = "Begint over: "+timerSec +"S";
 			};
 		},
+		renderHeader: function () {
+			var temp = htmlElements.header;
+
+			var directives = {
+				pagetitle : {
+					text: function () {
+						var loc = location.hash;
+						if (loc=="#programma") {
+							return "Wedstrijden"
+						} else if (loc=="#wedstrijd/EKWaterpoloDames/7") {
+							return "Live verslag"
+						} else if (loc=="#event/u20" || loc=="#event/strafworp" || loc== "#event/vrijeworp") {
+							return "Gebeurtenis"
+						} else {
+							return
+						}
+						 
+					}
+				}
+			}
+			Transparency.render(temp,data.matches,directives)
+		},
 		renderEvent: function (name) {
 			var temp = htmlElements.eventinfoTemplate;
 			var eventinfo = _.find(data.matches.events,function(item){ return item.name == name;})
@@ -180,6 +210,7 @@
 			Transparency.render(temp,eventinfo,directives);
 		},
 		renderProgram : function () {
+			
 			var temp = htmlElements.programTemplate;
 			var competitionName = ""
 			var program = data.matches;
@@ -216,6 +247,7 @@
 			Transparency.render(temp,program,directives);
 		},
 		renderMatchinfo : function (competitionname,id) {
+			
 			//var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
 			var matchId = id;
 			var competitionName = competitionname;
@@ -247,6 +279,7 @@
 			Transparency.render(temp,matchinfo,directives);
 		},
 		renderMatch : function (competitionname,id) {
+			
 			//var movie = _.find(data.searchedMovies.results,function(id){ return id = id; });
 			var matchId = id;
 			var competitionName = competitionname;
@@ -299,8 +332,10 @@
 			Transparency.render(temp,matchinfo,directives);
 			sections.hideAllPlayerData();
 			sections.hidePlayer();
+			sections.clickAthlete();
 		},
 		renderAar :function (competitionname,id) {
+			
 			var matchId = id;
 			var competitionName = competitionname;
 			var compinfo = _.find(data.matches.competitions,function(item){ return item.name.replace(/\s+/g, '') == competitionName;})
@@ -392,6 +427,27 @@
 			};
 
 			Transparency.render(temp,matchinfo,directives);
+		},
+		clickAthlete : function () {
+			var athlete = document.querySelectorAll('.athlete');
+			var athleteData = document.querySelectorAll('.playerdata');
+			var players = document.querySelectorAll('.athlete');
+			for (var i = 0; i < athlete.length; i++) {
+				athlete[i].addEventListener("click",showPlayerData, false)
+			};
+			function showPlayerData(e) {
+				
+				sections.changeBallKeeper("choose");
+				sections.hideAllPlayerData();
+				var number = Number(e.currentTarget.children[0].children[0].innerHTML)-1;
+				if (e.currentTarget.parentElement.dataset.bind =="team2Athletes") {
+					number+=13;
+				};
+				players[number].classList.add("chosenPlayer");
+				athleteData[number].classList.remove("hideplayerdata");
+				athleteData[number].classList.add("chosenPlayerdata");
+				
+			}
 		},
 		hideAllPlayerData : function() {
 			var playerData =  document.querySelectorAll('.playerdata');

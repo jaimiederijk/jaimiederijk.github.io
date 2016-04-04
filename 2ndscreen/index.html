@@ -12,13 +12,14 @@
 <body>
     <header>
         <nav>
-            <ul>
-            </ul>
+            <a href="#programma"><<</a>
+            
         </nav>
+        <h1 data-bind="pagetitle"></h1>
+        <img id="npo" src="static/images/NPO_logo.png">
     </header>
 
     <section id="program">
-    	<h1>Programma</h1>
         <div id="template-program">
             <div data-bind = "competitions">
                 
@@ -30,7 +31,9 @@
                     <span>20:15</span>
                     <h3 data-bind = "matchstarttimer" class="matchtimer">Begint over: 30S</h3>
                 </a>
-                <div data-bind= "matches">
+                <h2 data-bind = "compname"></h2>
+                <h3>Programma</h3>
+                <div class="matchesprogram" data-bind= "matches">
 
                     <a data-bind="deeplink">
                         <h2 data-bind="vs"></h2>
@@ -60,6 +63,18 @@
                 
                 <a data-bind="event"></a>
             </div>
+            <div id="timestuff">
+                <div id="timeline">
+                    
+                    <img id="bar" src="static/images/bar.svg">
+                    <span>-5min</span>
+                    <span>nu</span>
+                </div>
+                <img class="dot" src="static/images/dot.svg">
+                <img class="dot" src="static/images/dot.svg">
+                <img class="dot selectdot" src="static/images/dotsselect.svg">
+            </div>
+            
             <div class="team" data-bind="team1Athletes">
                 <div class="athlete">
                     <p><span data-bind="number"></span> <span data-bind="name"></span></p>
@@ -105,7 +120,10 @@
         <div id="template-eventinfo">
             <h2 data-bind="name"></h2>
             <p data-bind="explanation"></p>
+            <h2>Onderwater beelden</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/38KMnTks8K8?start=226&end=250" frameborder="0" allowfullscreen></iframe>
+            <h2>Bovenwater beelden</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/38KMnTks8K8?start=200&end=250" frameborder="0" allowfullscreen></iframe>
             <!-- <img data-bind="eventimage" alt=""> -->
         </div>
     </section>
