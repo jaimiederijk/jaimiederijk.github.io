@@ -245,6 +245,11 @@
 			};
 			//htmlElements.moviesTemplateLoader.classList.remove("loader");
 			Transparency.render(temp,program,directives);
+			var programs = document.querySelectorAll(".programbutton");
+			sections.hideProgram();
+			for (var i = 0; i < programs.length; i++) {
+				programs[i].addEventListener("click",sections.displayProgram,false);
+			};
 		},
 		renderMatchinfo : function (competitionname,id) {
 			
@@ -448,6 +453,18 @@
 				athleteData[number].classList.add("chosenPlayerdata");
 				
 			}
+		},
+		hideProgram : function () {
+			var programs = document.querySelectorAll(".matchesprogram");
+			for (var i = 0; i < programs.length; i++) {
+				programs[i].classList.add('hideprogram');
+			};
+
+		},
+		displayProgram : function(e) {
+			debugger
+			var programs = document.querySelectorAll(".matchesprogram");
+			programs
 		},
 		hideAllPlayerData : function() {
 			var playerData =  document.querySelectorAll('.playerdata');
