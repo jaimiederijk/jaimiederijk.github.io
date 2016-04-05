@@ -1,5 +1,6 @@
 {	"competitions" : [
 		{
+			"id":0,
 			"name" : "EK Waterpolo Dames",
 			"matches" : [
 					{
@@ -529,7 +530,8 @@
 				}
 			]
 		},
-		{			
+		{	
+			"id":1,	
 			"name" : "EK Waterpolo Heren",
 			"matches" : [
 					{

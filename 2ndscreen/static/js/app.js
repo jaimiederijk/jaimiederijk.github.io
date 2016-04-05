@@ -132,6 +132,7 @@
 		},
 		randomEvent : function (onoroff) {
 			if (onoroff) {
+				clearInterval(eventInterval);
 				eventInterval = window.setInterval(whiteOrBlue, 5000);
 				function whiteOrBlue() {
 					var two = Math.floor(Math.random() * (2));
@@ -159,7 +160,7 @@
 			var eventNumber = Math.floor(Math.random() * (data.matches.events.length));
 			var name = data.matches.events[eventNumber].name;
 
-			htmlElements.eventMessage.innerHTML= "<p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";
+			htmlElements.eventMessage.innerHTML= "<button><</button><span><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";
 		},//<h3>Gebeurtenis:</h3>
 		startMatchTimer: function () {
 			startMatchInterval = window.setInterval(countdown,1000);
@@ -216,12 +217,18 @@
 			var program = data.matches;
 
 			var directives = {
+
 				matchstarttimer : {
 					text:function(params) {
 						sections.startMatchTimer();
 					}
 				},
 				competitions : {
+					compid : {
+						id:function() {
+							return this.id;
+						}
+					},
 					compname : {
 						text: function() {
 							competitionName = this.name;
@@ -441,7 +448,15 @@
 				athlete[i].addEventListener("click",showPlayerData, false)
 			};
 			function showPlayerData(e) {
-				
+				var nodeButton = document.createElement("button");
+				var textnode = document.createTextNode("X");      
+				nodeButton.appendChild(textnode); 
+				nodeButton.addEventListener("click",sections.unclickAthlete,false)
+
+				for (var i = 0; i < players.length; i++) {
+					players[i].classList.remove("chosenPlayer");
+				};
+
 				sections.changeBallKeeper("choose");
 				sections.hideAllPlayerData();
 				var number = Number(e.currentTarget.children[0].children[0].innerHTML)-1;
@@ -451,8 +466,22 @@
 				players[number].classList.add("chosenPlayer");
 				athleteData[number].classList.remove("hideplayerdata");
 				athleteData[number].classList.add("chosenPlayerdata");
-				
+				athleteData[number].appendChild(nodeButton);
+
+
 			}
+		},
+		unclickAthlete : function (e) {
+			e.target.parentNode.classList.remove("chosenPlayerdata");
+			sections.hideAllPlayerData();
+			sections.changeBallKeeper(true);
+
+			var players = document.querySelectorAll('.athlete');
+			for (var i = 0; i < players.length; i++) {
+				players[i].classList.remove("chosenPlayer");
+			};
+
+			e.target.parentNode.removeChild(e.target);
 		},
 		hideProgram : function () {
 			var programs = document.querySelectorAll(".matchesprogram");
@@ -462,9 +491,14 @@
 
 		},
 		displayProgram : function(e) {
-			debugger
 			var programs = document.querySelectorAll(".matchesprogram");
-			programs
+			if (e.target.innerText== "+") {
+				programs[e.target.id].classList.remove("hideprogram");
+				e.target.innerHTML="-";
+			} else {
+				e.target.innerHTML="+";
+				programs[e.target.id].classList.add("hideprogram");
+			};	
 		},
 		hideAllPlayerData : function() {
 			var playerData =  document.querySelectorAll('.playerdata');

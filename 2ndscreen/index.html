@@ -32,7 +32,7 @@
                     <h3 data-bind = "matchstarttimer" class="matchtimer">Begint over: 30S</h3>
                 </a>
                 <h2 data-bind = "compname"></h2>
-                <h3 class="programbutton">Programma</h3>
+                <h3 >Programma <span data-bind="compid" class="programbutton">+</span></h3>
                 <div class="matchesprogram" data-bind= "matches">
 
                     <a data-bind="deeplink">
@@ -120,6 +120,8 @@
         <div id="template-eventinfo">
             <h2 data-bind="name"></h2>
             <p data-bind="explanation"></p>
+            <h2>Jury Rapport</h2>
+            <p class="jury" data-bind="juryrapport"><span>w2</span><span>XX</span><span>U20</span><span>5.44</span></p>
             <h2>Onderwater beelden</h2>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/38KMnTks8K8?start=226&end=250" frameborder="0" allowfullscreen></iframe>
             <h2>Bovenwater beelden</h2>

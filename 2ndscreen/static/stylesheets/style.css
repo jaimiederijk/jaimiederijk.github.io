@@ -79,6 +79,13 @@ header h1 {
 .selectdot {
   top: -25px;
 }
+.programbutton {
+    margin-left: 40%;
+    box-shadow: 0 0 0 2px rgb(255, 255, 255);
+    padding: 0.1rem 1rem;
+    border-radius: 4px;  
+}
+
 
 .playerdata li {
   list-style-type: square;
@@ -88,20 +95,28 @@ header h1 {
   max-height: 500px; 
   overflow: hidden;
   margin: 0;
+  position: relative;
   /*transition:0.5s;*/
   color: rgb(255, 104, 0);
   box-shadow: 0 0 0 2px rgb(255, 104, 0);
   border-radius: 4px;
+}
+.playerdata button {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 5rem;
+    transform: translateY( 0);
 }
 .hideplayerdata {
   max-height: 0px;
   box-shadow: none;
 }
 .chosenPlayerdata {
-  box-shadow: 0 0 0 2px rgb(255, 255, 255);
+  box-shadow: none;
 }
 .chosenPlayer {
-  box-shadow: 0 0 0 2px rgb(255, 255, 255);
+  box-shadow: 0 0 0 2px rgb(0, 0, 0);
 }
 .hideplayer {
   display: none;
@@ -157,14 +172,15 @@ iframe {
   width: 100%;
 } 
 .hideprogram {
+  max-height: 0;
   font-size: 0;
   margin: 0;
   padding: 0;
   box-shadow: none;
 }
 .matchesprogram {
-  max-height: 0;
   overflow: hidden;
+  transition:0.5s;
 }
 
 
@@ -203,7 +219,7 @@ margin-bottom: 1rem;
      text-decoration: none;
     color: rgb(255, 104, 0);
     /* display: block; */
-    width: 65vw;
+    width: 55vw;
     box-shadow: none;
     /* display: block; */
     margin: 0rem 0 1rem 0;
@@ -212,21 +228,22 @@ margin-bottom: 1rem;
 }
 #event a button {
   box-shadow: 0 0 0 2px #ff6d00;
-      width: 25vw;
+      width: 20vw;
     transform: translate(1rem,0);
 }
 #event p {
-  width: 28vw;
+  width: 30vw;
     /* display: block; */
     margin: 0rem 0 1rem 0;
     padding: 2rem 0;
 }
-#event h3 {
-    /*position: absolute;*/
-        width: 100vw;
-    margin: 0 1rem;
-    text-align: left;
-    /*transform: translate(1rem ,-1rem);*/
+#event button {
+  height: 6rem;
+  width: auto;
+  transform: translate( -0.7rem, -0rem);
+}
+#event > span {
+  display: flex;
 }
 
 #afteractionreport {
@@ -258,6 +275,18 @@ margin-bottom: 1rem;
 #template-eventinfo img{
   width: 90vw;
 }
+.jury span {
+  font-weight: 900;
+    font-size: 1.2em;
+    padding: 10px;
+    border: solid white;
+    background-color: #EEDF7D;
+    color: black;
+}
+.jury span:nth-of-type(3) {
+  margin-left: 2em;
+}
+
 .hasball {
     color: rgb(255, 104, 0);
     box-shadow: 0 0 0 2px rgb(255, 104, 0);
