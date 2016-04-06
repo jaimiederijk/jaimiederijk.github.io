@@ -204,6 +204,10 @@ button {
     /* margin-top: -55rem; */
 }
 
+
+.oldevent {
+  border: dotted white;
+}
 #event  {
   background-color: rgb(21, 21, 21);
 margin-bottom: 1rem;

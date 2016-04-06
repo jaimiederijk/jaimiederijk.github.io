@@ -144,9 +144,9 @@
 					var number = player[playerNumber].firstChild.innerText;
 					var color = "";
 					if (whiteOrBlue == 0) {
-						color = "wit ";
+						color = "Wit ";
 					} else {
-						color = "blauw ";
+						color = "Blauw ";
 					}
 					sections.createEvent(color + number);
 				};
@@ -160,8 +160,54 @@
 			var eventNumber = Math.floor(Math.random() * (data.matches.events.length));
 			var name = data.matches.events[eventNumber].name;
 
-			htmlElements.eventMessage.innerHTML= "<button><</button><span><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";
+
+			if (sections.selectedDot==0) {
+				htmlElements.eventMessage.innerHTML= "<span><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";//<button>></button>
+				var button = document.querySelector("#event button");
+				button.addEventListener("click",sections.changeEvent,false);
+				
+
+			} else if (sections.selectedDot==1) {
+				htmlElements.eventMessage.innerHTML= "<button><</button><span><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";//<button>></button>
+				var button = document.querySelector("#event button");
+				button.addEventListener("click",sections.changeEvent,false);
+				
+
+
+			} else if (sections.selectedDot==2) {
+				htmlElements.eventMessage.innerHTML= "<button><</button><span><p>"+player+"</p><a href='#event/"+name+"'>"+name+"</a>";
+				var button = document.querySelector("#event button");
+				button.addEventListener("click",sections.changeEvent,false);
+		
+
+			}
+
+
 		},//<h3>Gebeurtenis:</h3>
+		changeEvent:function () {
+			sections.changeDot("-");
+			sections.createEvent("Wit 2");
+			clearInterval(eventInterval);
+			htmlElements.eventMessage.classList.add("oldevent");
+			
+
+		},
+		selectedDot:2,
+		changeDot : function (forback) {
+			var dots= document.querySelectorAll("#timestuff > img");
+			for (var i = 0; i < dots.length; i++) {
+				dots[i].src = "static/images/dot.svg";
+				dots[i].classList.remove("selectdot");
+			};
+			if (forback=="-") {
+				sections.selectedDot-=1;
+				dots[sections.selectedDot].src = "static/images/dotsselect.svg";
+				dots[sections.selectedDot].classList.add("selectdot");
+			};
+			if (sections.selectedDot==0) {
+
+			};
+		},
 		startMatchTimer: function () {
 			startMatchInterval = window.setInterval(countdown,1000);
 			var timerSec = 30
