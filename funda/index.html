@@ -17,14 +17,17 @@
             <ul>
             </ul>
         </nav>
-        <button></button>
-        <button></button>
+        <button tabindex="0" title="negatief"></button>
+        <button tabindex="0" title="positief"></button>
     </header>
-
+    <section id="javascript">
+        <h2>please enable Javascript</h2>
+        <a href="http://www.enable-javascript.com/">How to</a>
+    </section>
     <section id="start">
         <div id="houses_template">
             <article >
-                <img data-bind="main_img">
+                <img data-bind="main_img" alt="Huis">
                 <article>
                     <h2 data-bind="Adres"></h2>
                     <span>&euro;<span data-bind="KoopPrijs"></span></span>
@@ -37,7 +40,7 @@
                 <div data-bind="Media" class="images">
                     <figure data-bind="extra_media_id">
                         <a data-bind="extra_media_link">
-                            <img data-bind="extra_media">
+                            <img data-bind="extra_media" alt="foto van het huis">
                         </a>
                     </figure>
                 </div>
