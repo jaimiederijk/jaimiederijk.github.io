@@ -46,8 +46,14 @@ header button:first-of-type {
   background-color: rgb(163,46,46);
   background-image: url('../images/thumb-down.png');
   left: 0;
-} 
-
+}
+button:hover {
+  cursor: pointer; cursor: hand;
+  background-color: rgb(51, 48, 138);
+}
+button:focus {
+  background-color: rgb(51, 48, 138)!important;
+}
 
 article > img {
   max-width: 40em;
@@ -59,7 +65,12 @@ article article {
   padding: 0 2em;
 }
 
-
+.hidden {
+  display: none;
+}
+#javascript {
+  background-color: red;
+}
 
 nav a {
   font-size: 1.5em;

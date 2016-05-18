@@ -24,16 +24,28 @@ var data = {
 		})
 	},
 	createNewQuery : function () {
+		var queryCreator = require('./queryCreator');	
+		var city ;
+		if (!data.city) {
+			queryCreator.city();
+		} else {
+			data.continueCreateNewQuery(data.city);
+		}		
+	},
+	continueCreateNewQuery: function(city){
 		var input={};
 		var queryCreator = require('./queryCreator');	
 		var soort = queryCreator.soort();
+		var city = city;
 		var query;
+		 
 
-		if(createQueryConfig.newQueryAttempts<1) {
+		if(this.createQueryConfig.newQueryAttempts<1) {
 			console.log("no houses found");
 			return
 		}
-		query = queryCreator.city() + "/" + soort + "/" + queryCreator.kamers() + "/" + queryCreator.woonoppervlakte() + "/" + queryCreator.perceeloppervlakte() + "/" + queryCreator.prijs();
+
+		query = city + "/" + soort + "/" + queryCreator.kamers() + "/" + queryCreator.woonoppervlakte() + "/" + queryCreator.perceeloppervlakte() + "/" + queryCreator.prijs();
 		if (soort=="woonhuis") {
 			query += "/" + queryCreator.energielabel();
 		}
@@ -198,11 +210,79 @@ var data = require('./data');
 // nederlandse objecten omdat de data nederlands is
 var queryCreator = {
 	city : function () {
-		var city = geoplugin_city();
+		askUser ();
+		var city;
+		city = geoplugin_city();
 		if (city =="") {
-			city="amsterdam";
+			var geocoder;
+
+			if (navigator.geolocation) {
+			  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+			} else {
+		       errorFunction()
+		    }
+			//Get the latitude and the longitude;
+			function successFunction(position) {
+			  var lat = position.coords.latitude;
+			  var lng = position.coords.longitude;
+			  codeLatLng(lat, lng);
+			}
+
+			function errorFunction() {
+				console.log("No geolocation");
+			  	askUser ();
+			}
+
+			function initialize() {
+			  geocoder = new google.maps.Geocoder();
+
+			}
+
+			function codeLatLng(lat, lng) {
+				// var lat = geoplugin_latitude();//test 
+				// var lng = geoplugin_longitude();
+			  var latlng = new google.maps.LatLng(lat, lng);
+			  geocoder.geocode({latLng: latlng}, function(results, status) {
+			    if (status == google.maps.GeocoderStatus.OK) {
+			      if (results[1]) {
+			        var arrAddress = results;
+			        console.log(results);
+			        $.each(arrAddress, function(i, address_component) {
+			          if (address_component.types[0] == "locality") {
+			            console.log("City: " + address_component.address_components[0].long_name);
+			            city = address_component.address_components[0].long_name;
+			            data.continueCreateNewQuery(city);
+		    			data.city = city;
+			          }
+			        });
+			      } else {
+			        console.log("No results found");
+			        askUser ();
+			      }
+			    } else {
+			      console.log("Geocoder failed due to: " + status);
+			      askUser ();
+			    }
+			  });
+			}
+		} else { // geoplugin succes
+			data.continueCreateNewQuery(city);
+		    data.city = city;
 		}
-		return city
+		function askUser () {
+			var askCity = prompt("Welke stad wilt u wonen?", "amsterdam");
+    
+		    if (askCity != null) {
+		        city = askCity;
+		        data.continueCreateNewQuery(city);
+		        data.city = city;
+		    } else {
+		    	city="amsterdam";
+		    }
+		}
+		
+		 
+		// return city
 	},
 	soort : function () {	
 		var soortFilter;
@@ -229,7 +309,7 @@ var queryCreator = {
 		return soortFilter
 	},
 	kamers : function () {
-		var laag = data.positiveQueries[0].kamers;
+		var laag = 0;//data.positiveQueries[0].kamers
 		var hoog = 10;
 		var kamerFilter = laag + "-" + hoog + "-kamers"; 
 		return kamerFilter
@@ -264,6 +344,8 @@ var data = require('./data');
 
 var routes = {
 	init: function() {
+		var enable = document.querySelector("#javascript");
+		enable.classList.add("hidden");
 		//
 		routie('', function() {
 			sections.displaySection("home");

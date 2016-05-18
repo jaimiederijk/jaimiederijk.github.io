@@ -3,6 +3,8 @@ var data = require('./data');
 
 var routes = {
 	init: function() {
+		var enable = document.querySelector("#javascript");
+		enable.classList.add("hidden");
 		//
 		routie('', function() {
 			sections.displaySection("home");

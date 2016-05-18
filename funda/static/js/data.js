@@ -28,7 +28,7 @@ var data = {
 		var soort = queryCreator.soort();
 		var query;
 
-		if(createQueryConfig.newQueryAttempts<1) {
+		if(this.createQueryConfig.newQueryAttempts<1) {
 			console.log("no houses found");
 			return
 		}
